@@ -55,7 +55,7 @@ const CompanionList = ({ title, companions, classNames }: CompanionsListProps) =
               <TableHead>Duration</TableHead>
             </TableRow>
           </TableHeader>
-          <TableBody>
+          <TableBody>  
             {companions && companions.length > 0 ? (
               companions.map(({ id, subject, name, topic, duration }) => (
                 <TableRow key={id}>
@@ -67,12 +67,17 @@ const CompanionList = ({ title, companions, classNames }: CompanionsListProps) =
                           style={{ backgroundColor: getSubjectColor(subject) }}
                         >
                           <Image 
-                            src={`/icon/${subject}.svg`} 
+                            src={`/icons/${subject}.svg`} 
                             alt={subject} 
                             width={35} 
                             height={35} 
                           />
                         </div>
+                        <div className="flex flex-col gap-2">
+                          <p className="font-bold  text-xl">{name}</p>
+                          <p className="font-bold  text-sm">{topic}</p>
+                        </div>
+
                         <div className="flex flex-col gap-2">
                           <p className="font-medium"></p>
                           <p className="text-sm text-gray-500">{subject}</p>

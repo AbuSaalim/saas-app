@@ -18,7 +18,7 @@ const Page = () => {
           subject="science"
           duration={45}
           color="#8be7d6"
-          test="test"
+       
         />
         <CompanionCard
           id="101"
@@ -41,7 +41,10 @@ const Page = () => {
     <section className='home-section'>
     <CompanionList
        title="Recently completed sessions"
-       companions={recentSessions}
+       companions={recentSessions.map(session => ({
+         ...session,
+         duration: String(session.duration),
+       }))}
        classNames="w-2/3 max-lg:w-full"
     />
     <CTA />
